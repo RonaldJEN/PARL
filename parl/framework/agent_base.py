@@ -23,10 +23,10 @@ __all__ = ['Agent']
 
 class Agent(object):
     """
-    A Agent is responsible for the general data flow
+    An Agent is responsible for the general data flow
     outside the algorithm.
 
-    A Agent is created in a bottom-up way:
+    An Agent is created in a bottom-up way:
     a. create a Model
     b. create an Algorithm with the model as an input
     c. define a Agent with the algorithm
