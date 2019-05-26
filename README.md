@@ -81,15 +81,7 @@ class Agent(object):
     def sum(self, a, b):
         return a+b
 
-# launch `Agent.py` at any computation platforms such as a CPU cluster.
-if __main__ == '__main__':
-    agent = Agent()
-    agent.as_remote(server_address)
-
-
-#============Server.py=================
-remote_manager = parl.RemoteManager()
-agent = remote_manager.get_remote()
+agent = Agent()
 agent.say_hello()
 ans = agent.sum(1,5) # run remotely and not consume any local computation resources
 ```
