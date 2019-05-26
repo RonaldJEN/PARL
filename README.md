@@ -82,7 +82,7 @@ class Agent(object):
         return a+b
 
 agent = Agent()
-agent.say_hello()
+agent.say_hello() # no print on the screen
 ans = agent.sum(1,5) # run remotely and not consume any local computation resources
 ```
 Two steps to use outer computation resources:
