@@ -59,10 +59,6 @@ class Learner(object):
         self.csv_logger = CSVLogger(
             os.path.join(logger.get_dir(), 'result.csv'))
 
-        from tf_summary import Summary
-        import time
-        self.tf_summary = Summary('./summary_log/{}/'.format(time.time()))
-
     def run_remote_manager(self):
         """ Accept connection of new remote actor and start sampling of the remote actor.
         """
@@ -227,7 +223,6 @@ class Learner(object):
     def log_metrics(self, metrics):
         logger.info(metrics)
         self.csv_logger.log_dict(metrics)
-        self.tf_summary.log_dict(metrics, metrics['sample_total_steps'])
     
     def close(self):
         self.csv_logger.close()
