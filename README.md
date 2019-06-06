@@ -28,7 +28,7 @@ The main abstractions introduced by PARL that are used to build an agent recursi
 `Algorithm` describes the mechanism to update parameters in `Model` and often contains at least one model.
 
 ### Agent
-`Agent`, a data bridge between environment and algorithm, is responsible for data I/O with the outside environment and describes data preprocessing before feeding data into the training process.
+`Agent`, a data bridge between the environment and the algorithm, is responsible for data I/O with the outside environment and describes data preprocessing before feeding data into the training process.
 
 Here is an example of building an agent with DQN algorithm for Atari games.
 ```python
@@ -94,7 +94,7 @@ agent.say_hello()
 ans = agent.sum(1,5) # run remotely and not consume any local computation resources
 ```
 Two steps to use outer computation resources:
-1. use the `parl.remote_class` to decorate a class at first, after which it is transferred to be a new class that can run in other CPUs or machines.
+1. Use the `parl.remote_class` to decorate a class at first, after which it is transferred to be a new class that can run in other CPUs or machines.
 2. Get remote objects from the `RemoteManager`, and these objects have the same functions as the real ones. However, calling any function of these objects **does not** consume local computation resources since they are executed elsewhere.
 
 <img src=".github/decorator.png" alt="PARL" width="450"/>
